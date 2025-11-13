@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import "../styles/NumberOfReviews.css";
+import "../styles/NumberofReviews.css";
 
 const NumberOfReviews = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
   const reviews = useSelector((state) => state.reviews.listaReseñas);
   const usuarioPlan = localStorage.getItem("plan");
 
