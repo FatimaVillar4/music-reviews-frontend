@@ -1,0 +1,144 @@
+/* ChangePlan.css - Componente de cambio de plan */
+
+:root {
+    --primary-color: #1db954;
+    --text-light: #b3b3b3;
+}
+
+/* Container principal */
+.changePlan-container {
+    background: rgba(40, 40, 40, 0.9);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Header del componente */
+.plan-header h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.plan-header h2::before {
+    content: "💾";
+    font-size: 24px;
+}
+
+/* Información del plan */
+.plan-info {
+    background: linear-gradient(135deg, rgba(29, 185, 84, 0.1), rgba(29, 185, 84, 0.05));
+    border: 1px solid rgba(29, 185, 84, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* Acciones del plan (botón upgrade) */
+.plan-actions {
+    margin-top: 20px;
+}
+
+.plan-label {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.plan-label strong {
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+/* Barra de progreso (si la necesitas) */
+.usage-bar {
+    background: rgba(255, 255, 255, 0.1);
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.usage-progress {
+    background: linear-gradient(90deg, var(--primary-color), #1ed760);
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+/* Texto de uso */
+.usage-text {
+    color: white;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+/* Botón de upgrade */
+.btn-upgrade {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-top: 15px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.btn-upgrade:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+}
+
+/* Mensaje premium */
+.plan-premium {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px;
+    background: rgba(29, 185, 84, 0.1);
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Mensajes generales */
+.changePlan-container .mensaje {
+    color: var(--primary-color);
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+    background: rgba(29, 185, 84, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(29, 185, 84, 0.3);
+}
+
+/* Mensaje de carga */
+.changePlan-container > p {
+    color: var(--text-light);
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .changePlan-container {
+        padding: 20px;
+    }
+
+    .plan-header h2 {
+        font-size: 18px;
+    }
+}

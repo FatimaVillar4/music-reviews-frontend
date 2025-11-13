@@ -1,0 +1,148 @@
+/* CreateReview.css - Formulario de crear reseña */
+
+:root {
+    --primary-color: #1db954;
+    --text-light: #b3b3b3;
+}
+
+/* Container principal */
+.CreateReview-container {
+    background: rgba(40, 40, 40, 0.9);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Título del formulario */
+.CreateReview-container h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.CreateReview-container h2::before {
+    content: "➕";
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+/* Labels */
+.CreateReview-container label {
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    display: block;
+    font-size: 14px;
+}
+
+.CreateReview-container label:first-of-type {
+    margin-top: 0;
+}
+
+/* Inputs y Select */
+.CreateReview-container .form-control,
+.CreateReview-container input[type="text"],
+.CreateReview-container select,
+.CreateReview-container textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    margin-bottom: 5px;
+}
+
+.CreateReview-container .form-control:focus,
+.CreateReview-container input:focus,
+.CreateReview-container select:focus,
+.CreateReview-container textarea:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.15);
+}
+
+.CreateReview-container ::placeholder {
+    color: rgba(179, 179, 179, 0.5);
+}
+
+/* Select específico */
+.CreateReview-container select {
+    cursor: pointer;
+}
+
+.CreateReview-container select option {
+    background: #282828;
+    color: white;
+}
+
+/* Textarea */
+.CreateReview-container textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Input de rating (select) */
+.CreateReview-container .rating-input {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.CreateReview-container .rating-input:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.15);
+}
+
+/* Botón de guardar */
+.CreateReview-container .btn-primary,
+.CreateReview-container button {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1ed760 100%);
+    border: none;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.CreateReview-container .btn-primary:hover,
+.CreateReview-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(29, 185, 84, 0.3);
+}
+
+/* Mensaje de confirmación */
+.CreateReview-container .mensaje {
+    color: var(--primary-color);
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+    background: rgba(29, 185, 84, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(29, 185, 84, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .CreateReview-container {
+        padding: 20px;
+    }
+
+    .CreateReview-container h2 {
+        font-size: 18px;
+    }
+}

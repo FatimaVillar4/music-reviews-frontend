@@ -1,0 +1,325 @@
+/* reviewList.css - Lista de reseñas con filtros, editar y eliminar */
+
+:root {
+    --primary-color: #1db954;
+    --accent-color: #ff6b6b;
+    --text-light: #b3b3b3;
+    --card-bg: #282828;
+    --hover-bg: #3e3e3e;
+}
+
+/* Container principal del dashboard de reseñas */
+.review-dashboard {
+    background: rgba(40, 40, 40, 0.9);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Header con título y filtros */
+.review-dashboard .header {
+    margin-bottom: 20px;
+}
+
+.review-dashboard .header h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.review-dashboard .header h3::before {
+    content: "📝";
+    font-size: 24px;
+}
+
+/* Barra de filtros */
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Lista de reseñas */
+.review-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Scrollbar personalizado */
+.review-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.review-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.review-list::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+/* Card de cada reseña */
+.review-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.review-card:hover {
+    background: var(--hover-bg);
+    transform: translateX(5px);
+}
+
+/* Top de la card - título, rating e imagen */
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 10px;
+    gap: 15px;
+}
+
+/* Área del título */
+.card-title-area {
+    flex: 1;
+}
+
+.card-title-area .title {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.card-title-area .meta {
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+/* Rating */
+.card-top .rating {
+    color: #ffd700;
+    font-size: 14px;
+    font-weight: 700;
+    background: rgba(255, 215, 0, 0.1);
+    padding: 4px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+/* Imagen de preview en la card */
+.preview-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.preview-img:hover {
+    transform: scale(1.5);
+    border-color: var(--primary-color);
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Descripción de la reseña */
+.desc {
+    color: var(--text-light);
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Input de edición inline */
+.review-card input[type="text"],
+.review-card .edit-review-textarea,
+.review-card .edit-review-select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.review-card .edit-review-textarea {
+    min-height: 80px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.review-card .edit-review-select {
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.review-card .edit-review-select option {
+    background: #282828;
+    color: white;
+}
+
+.review-card input[type="text"]:focus,
+.review-card .edit-review-textarea:focus,
+.review-card .edit-review-select:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.15);
+}
+
+/* Label para el select de calificación en edición */
+.review-card label {
+    display: block;
+    color: var(--text-light);
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Botones de acciones */
+.review-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-edit,
+.btn-save {
+    background: rgba(29, 185, 84, 0.2);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-edit:hover,
+.btn-save:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+}
+
+.btn-delete {
+    background: rgba(255, 107, 107, 0.2);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.btn-cancel {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Estado vacío */
+.review-list:empty::after {
+    content: "No hay reseñas aún. ¡Crea tu primera reseña!";
+    display: block;
+    text-align: center;
+    color: var(--text-light);
+    padding: 40px 20px;
+    font-size: 16px;
+}
+
+.no-reviews {
+  text-align: center;
+  color: #b0b8c1;
+  margin-top: 40px;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .review-dashboard {
+        padding: 20px;
+    }
+
+    .card-top {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .review-buttons {
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+}

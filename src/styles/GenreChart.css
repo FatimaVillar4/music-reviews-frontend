@@ -1,0 +1,94 @@
+/* GenreChart.css - Componente de gráfico de géneros */
+
+:root {
+    --primary-color: #1db954;
+    --text-light: #b3b3b3;
+}
+
+/* Container principal del gráfico */
+.genre-chart-card {
+    background: rgba(40, 40, 40, 0.9);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Título del gráfico */
+.genre-chart-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.genre-chart-title::before {
+    content: "📊";
+    font-size: 24px;
+}
+
+/* Contenedor del gráfico */
+.genre-chart {
+    width: 100%;
+    position: relative;
+}
+
+.genre-chart-wrap {
+    width: 100%;
+    position: relative;
+}
+
+/* Placeholder cuando no hay datos */
+.genre-chart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 240px;
+    color: var(--text-light);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.genre-chart-empty i {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0.3;
+    color: var(--primary-color);
+}
+
+.genre-chart-empty p {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    color: white;
+}
+
+.genre-chart-empty small {
+    font-size: 13px;
+    color: var(--text-light);
+    opacity: 0.8;
+}
+
+/* Estilos para la leyenda del gráfico (Chart.js) */
+.genre-chart canvas {
+    max-width: 100%;
+    height: auto !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .genre-chart-card {
+        padding: 20px;
+    }
+
+    .genre-chart-title {
+        font-size: 18px;
+    }
+
+    .genre-chart-wrap {
+        min-height: 200px;
+    }
+}

@@ -1,0 +1,125 @@
+/* ImageUploader.css - Componente para subir imágenes */
+
+:root {
+    --primary-color: #1db954;
+    --accent-color: #ff6b6b;
+    --text-light: #b3b3b3;
+}
+
+/* Container del uploader */
+.image-uploader {
+    margin-top: 10px;
+}
+
+/* Input de archivo */
+.image-uploader input[type="file"] {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.image-uploader input[type="file"]::-webkit-file-upload-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.image-uploader input[type="file"]::-webkit-file-upload-button:hover {
+    background: #1ed760;
+    transform: translateY(-2px);
+}
+
+.image-uploader input[type="file"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.15);
+}
+
+/* Container del preview */
+.preview-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.preview-container .preview-img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón para quitar imagen */
+.preview-container button {
+    background: rgba(255, 107, 107, 0.2);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.preview-container button:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+/* Mensaje de estado */
+.image-uploader .message {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Diferentes estados del mensaje */
+.image-uploader .message {
+    background: rgba(29, 185, 84, 0.1);
+    color: var(--primary-color);
+    border: 1px solid rgba(29, 185, 84, 0.3);
+}
+
+/* Si el mensaje contiene "Error" */
+.image-uploader .message:has-text("Error"),
+.image-uploader .message[style*="color: red"] {
+    background: rgba(255, 107, 107, 0.1);
+    color: var(--accent-color);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+/* Si el mensaje contiene "Subiendo" */
+.image-uploader .message:has-text("Subiendo") {
+    background: rgba(247, 147, 30, 0.1);
+    color: #f7931e;
+    border: 1px solid rgba(247, 147, 30, 0.3);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .preview-container .preview-img {
+        max-height: 150px;
+    }
+}

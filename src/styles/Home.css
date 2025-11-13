@@ -1,0 +1,70 @@
+/* Home.css - Layout principal del Dashboard */
+
+:root {
+    --primary-color: #1db954;
+    --secondary-color: #191414;
+    --accent-color: #ff6b6b;
+    --text-light: #b3b3b3;
+    --card-bg: #282828;
+}
+
+/* Container principal del Home */
+.home-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e1e1e 0%, #2d1b3d 100%);
+    width: 100%;
+}
+
+/* Contenido principal (debajo del header) */
+.home-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    grid-template-rows: auto auto;
+    gap: 25px;
+    grid-template-areas:
+        "left right"
+        "bottom bottom";
+}
+
+/* Columna izquierda - Formulario de crear */
+.left-section {
+    grid-area: left;
+}
+
+/* Columna derecha - Lista de reseñas */
+.right-section {
+    grid-area: right;
+}
+
+/* Sección inferior - Plan y Gráfico */
+.bottom-section {
+    grid-area: bottom;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .home-content {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "left"
+            "right"
+            "bottom";
+    }
+}
+
+@media (max-width: 768px) {
+    .home-content {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .bottom-section {
+        grid-template-columns: 1fr;
+    }
+}

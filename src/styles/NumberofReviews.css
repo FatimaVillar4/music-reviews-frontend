@@ -1,0 +1,100 @@
+/* NumberOfReviews.css - Indicador de uso de reseñas */
+
+:root {
+    --primary-color: #1db954;
+    --text-light: #b3b3b3;
+}
+
+/* Container principal */
+.NumberOfReviews-container {
+    background: linear-gradient(135deg, rgba(29, 185, 84, 0.1), rgba(29, 185, 84, 0.05));
+    border: 1px solid rgba(29, 185, 84, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* Header con el contador */
+.review-header {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* Texto de conteo debajo de la barra */
+.review-count {
+    color: var(--text-light);
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 8px;
+    text-align: right;
+}
+
+/* Container de la barra de progreso */
+.progress-container {
+    background: rgba(255, 255, 255, 0.1);
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Barra de progreso animada */
+.progress-bar {
+    background: linear-gradient(90deg, var(--primary-color), #1ed760);
+    height: 100%;
+    transition: width 0.5s ease;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+    position: relative;
+}
+
+/* Animación de brillo en la barra */
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Texto para usuarios premium */
+.premium-text {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.premium-text::before {
+    content: "👑 ";
+    font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .NumberOfReviews-container {
+        padding: 15px;
+    }
+
+    .review-header {
+        font-size: 14px;
+    }
+
+    .premium-text {
+        font-size: 15px;
+    }
+}

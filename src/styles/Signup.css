@@ -1,0 +1,166 @@
+/* signup.css - Estilos para SignUp */
+
+:root {
+    --primary-color: #1db954;
+    --text-light: #b3b3b3;
+}
+
+/* Container principal del Signup */
+.signup-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #1e1e1e 0%, #2d1b3d 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título */
+.signup-container h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Labels */
+.signup-container label {
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 8px;
+    margin-top: 12px;
+    display: block;
+    font-size: 14px;
+}
+
+/* Primera label sin margen superior */
+.signup-container label:first-of-type {
+    margin-top: 0;
+}
+
+/* Inputs */
+.signup-container input[type="text"],
+.signup-container input[type="password"],
+.signup-container input[type="email"] {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.signup-container input[type="text"]:focus,
+.signup-container input[type="password"]:focus,
+.signup-container input[type="email"]:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.15);
+}
+
+.signup-container input::placeholder {
+    color: rgba(179, 179, 179, 0.5);
+}
+
+/* Validación visual de contraseñas */
+.signup-container input[type="password"]:invalid {
+    border-color: rgba(255, 107, 107, 0.3);
+}
+
+.signup-container input[type="password"]:valid {
+    border-color: rgba(29, 185, 84, 0.3);
+}
+
+/* Botón de registro */
+.signup-container button {
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1ed760 100%);
+    border: none;
+    padding: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 25px;
+}
+
+.signup-container button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(29, 185, 84, 0.3);
+}
+
+.signup-container button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Mensajes de error de validación */
+.signup-container .error-message {
+    color: #ff6b6b;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Mensajes */
+.signup-container > p {
+    color: var(--text-light);
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    max-width: 400px;
+}
+
+/* Ocultar los br */
+.signup-container br {
+    display: none;
+}
+
+.signup-container .mensaje {
+    color: #ff6b6b;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+    text-align: center;
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Responsive */
+@media (max-width: 576px) {
+    .signup-container h2 {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+    
+    .signup-container input[type="text"],
+    .signup-container input[type="password"],
+    .signup-container input[type="email"],
+    .signup-container button {
+        max-width: 100%;
+    }
+    
+    .signup-container label {
+        margin-top: 10px;
+    }
+}
