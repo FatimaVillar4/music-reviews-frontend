@@ -4,7 +4,7 @@ import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import SignUpSchema from "./validations/SingupSchema";
 import { useTranslation } from "react-i18next";
-import '../styles/signup.css';
+import '../styles/Signup.css';
 
 const SignUp = () => {
   const { t } = useTranslation();
